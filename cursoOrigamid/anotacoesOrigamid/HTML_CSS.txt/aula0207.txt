@@ -1,0 +1,33 @@
+CSS Básico
+
+-> link - cria uma relação entre o html e o CSS
+-> rel - defineo tipo de arquivo
+-> href - define o caminho do arquivo
+
+<link rel="stylesheet" href="/style.css" />
+
+Na prática
+No index do bikeProject vou linkar o css usando o link que nem no exemplo,
+o link foi feito no head do index pq normalmente é feito assim
+
+CSS Anatomia 
+
+- Seletor: Seleciona o elemento que deve ser estilizado
+- Bloco CSS: Engloba as propriedades {} que serão aplicadas ao seletor
+- Propriedade: Define o que será alterado
+- Valor: Define o valor do novo estilo 
+
+seletor
+    |
+    a {
+        color: black;
+        text-decoration: none;
+    }          |           |
+    |          |          valor
+    |      propriedade
+    |
+bloco css                   
+
+CSS é cascata entao as alterações são realizadas em ordem
+
+primeiro apliquei o color black e depois red, red permanece, pois foi a ultima alteração
