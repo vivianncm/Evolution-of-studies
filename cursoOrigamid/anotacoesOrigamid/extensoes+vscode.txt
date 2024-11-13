@@ -1,0 +1,7 @@
+- Extensões
+    - Angular Language Service
+    - Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout
+    - Color Highlight
+    - Material Icon Theme
+    - Shades of Purple
+    - Ayu
