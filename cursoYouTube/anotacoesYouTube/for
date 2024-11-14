@@ -1,0 +1,21 @@
+FOR
+Estrutura de Repetição - LOOP
+    -FOR
+    um pedaço de código que vai ficar se repetindo quantas vezes você quiser 
+    se você precisa fazer varias vezes uma mesma coisa em codigo ao inves de ficar fazendo o mesmo codigo varias vezes, você usa o for, pede pra ele repetir aquilo que você quer 
+    quantas vezes você quiser
+
+    Estrutura
+
+        for ([inicializaçao]; [condiçao]; [expressao final]){
+            seu codigo aqui
+        }
+
+1) INICIALIZAÇAO - Criar uma variavel e colocar
+                     um valor inicial pra ela
+
+2) CONDIÇAO - Enquanto for true, o laço continuará iterando.
+                Ele irá verificar antes de cada iteração
+
+3) EXPRESSAO FINAL - O que ira ocorrer a cada vez que o 
+                        nosso laço der uma volta

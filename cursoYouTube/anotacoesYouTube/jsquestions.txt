@@ -1,0 +1,246 @@
+1.	Tipos de Dados: Qual é a diferença entre null e undefined em JavaScript? Em quais situações cada um deles aparece?
+
+undefined--> aparece em situações onde o JavaScript ainda não tem um valor específico para uma variável ou propriedade
+      -- Quando você declara uma variável, mas não atribui um valor:
+  
+     let x;
+     console.log(x); // undefined
+    
+     -- Quando você tenta acessar uma propriedade que não existe em um objeto:
+  
+     let pessoa = { nome: "João" };
+     console.log(pessoa.idade); // undefined, porque "idade" não foi definida
+   
+     -- Quando uma função não retorna explicitamente um valor:
+ 
+     function minhaFuncao() {}
+     console.log(minhaFuncao()); // undefined, porque a função não retorna nada
+     
+
+null--> aparece quando queremos indicar, de propósito, que uma variável ou propriedade não tem valor:
+   -- Você usa null para representar intencionalmente que "não há valor". Por exemplo, se temos um formulário onde o campo "data de nascimento" começa vazio:
+   
+     let dataNascimento = null; // Começa sem data, mas com a intenção de adicionar depois
+     
+   -- Também é comum definir uma variável como null para "limpar" seu valor quando queremos que ela deixe de armazenar dados:
+    
+     let usuario = { nome: "Ana" };
+     usuario = null; // O objeto "usuario" não tem mais um valor associado
+
+
+undefined é o valor "automático" que o JavaScript usa quando não há nada definido ainda.
+null é o valor que você usa intencionalmente para indicar que algo está "vazio" ou "ausente".
+
+Em JavaScript, null significa que uma variável existe, mas não tem nenhum valor. Pense nisso como um espaço vazio que você reservou intencionalmente para algo,
+ mas ainda não colocou nada lá. Já undefined aparece quando você declara uma variável, mas esquece de dar um valor para ela. Ou seja, é um jeito do JavaScript dizer 
+que ele sabe que a variável existe, mas não tem ideia do que colocar ali.
+
+
+	2.	Declaração de Variáveis: O que acontece se você declarar uma variável com var dentro de uma função e tentar acessá-la fora da função? Qual é a diferença no comportamento entre var e let?
+
+  Se você declarar uma variável usando var dentro de uma função, essa variável só "vive" ali dentro. Então, se tentar acessá-la fora dessa função, vai receber um erro. 
+Além disso, var é um pouco mais "solto" em termos de escopo, e pode até ser acessado fora de blocos { }, como loops ou condicionais, o que pode causar problemas. 
+Já let é mais restrito e funciona só dentro do bloco onde foi declarado. let é mais seguro para o código.
+
+
+	3.	Operadores de Comparação: Por que é recomendado usar === em vez de ==? Qual o comportamento que == pode causar?
+
+ O == tenta comparar valores, mas ignora o tipo. Isso pode causar confusão, pois 2 == "2" dá verdadeiro (mesmo sendo tipos diferentes). 
+O === compara valor e tipo, então 2 === "2" é falso, já que um é número e o outro é texto. Usar === ajuda a evitar bugs.
+
+
+	4.	Funções Básicas: Como você cria uma função em JavaScript? Qual é a diferença entre uma função declarada com function e uma função atribuída a uma variável?
+
+Você pode criar uma função com function minhaFuncao() { }. Esse tipo de função é "elevado" (ou "hoisted") pelo JavaScript, o que significa que você pode chamá-la mesmo antes de ela aparecer no código. 
+Mas, se você cria uma função como const minhaFuncao = function() { }, ela precisa ser chamada só depois de declarada. 
+Esse segundo tipo de função fica ligado à variável, o que também pode ser útil para organizar o código.
+
+
+	5.	Arrays: Como você adicionaria um item ao final de um array em JavaScript? E como removeria o último item?
+
+ Para colocar algo no final de um array, use array.push(item);
+ e para remover o último item, use array.pop();
+ Isso torna fácil trabalhar com listas de itens, adicionando e removendo coisas sem muito esforço.
+
+
+	6.	Laços de Repetição: Qual é a diferença entre os laços for, for...of e forEach? Dê exemplos de quando usar cada um.
+
+O laço for é o mais clássico e permite controle total sobre a iteração. 
+
+                for (let i = 0; i < array.length; i++) {}
+
+ que é ótimo quando você quer manipular cada item por índice.
+
+for...of simplifica a leitura dos valores em um array sem precisar de índices. 
+
+               for (const item of array) { }
+
+ Use para percorrer todos os itens sem muito controle.
+
+forEach executa uma função para cada item e é uma maneira mais funcional. 
+
+               array.forEach(item => { });
+
+ É ótimo para aplicar uma operação em cada item
+
+
+	7.	Condicionais: Como funciona uma estrutura if...else em JavaScript? Dê um exemplo de uma condição com três opções diferentes usando if, else if e else.
+
+A estrutura if...else verifica condições.
+Por exemplo:
+
+let num = 10; 
+if (num > 10) { console.log("Maior que 10"); } 
+else if (num === 10) { console.log("Igual a 10"); } 
+else { console.log("Menor que 10"); }
+
+Nesse caso, temos três caminhos dependendo do valor de num.
+
+	8.	Funções de Callback: O que é uma função de callback em JavaScript? Dê um exemplo de como você usaria um callback em uma função simples.
+
+ Um callback é basicamente uma função passada como argumento para outra função. 
+Imagine que você quer fazer algo extra após uma ação:
+
+function saudacao(nome, callback) { console.log("Olá, " + nome); callback(); } saudacao("João", () => console.log("Bem-vindo!"));
+
+Aqui, callback é uma função que será executada depois de "Olá, João".
+
+
+ O que é um Callback em JavaScript?
+
+Em JavaScript, uma função de callback é uma função que você passa como argumento para outra função. Depois, essa função é chamada (ou "executada") dentro da função principal em um momento específico. 
+
+É como se você dissesse: “Faça essa tarefa e, quando terminar, chame esta outra função para continuar.”
+
+Por que usamos callbacks?
+
+Callbacks são úteis quando queremos que algo aconteça depois que outra coisa termina, especialmente em situações onde o tempo de execução não é garantido. 
+Um exemplo clássico é quando você faz uma requisição de dados ao servidor: 
+você quer que o código continue normalmente, mas que execute alguma coisa específica assim que a resposta do servidor chegar
+
+ Exemplo: Um callback simples
+
+Imagina que você tem duas tarefas: uma função que exibe uma mensagem e outra função que mostra uma saudação. Vamos fazer com que a saudação seja uma callback da função principal.
+
+
+function saudacao(nome) {
+    console.log("Olá, " + nome + "!");
+}
+
+function processarEntradaUsuario(callback) {
+    const nome = "Ana";
+    callback(nome);
+}
+
+ Aqui, passamos "saudacao" como callback
+processarEntradaUsuario(saudacao);
+
+- processarEntradaUsuario recebe uma função callback como parâmetro.
+- Dentro dela, a função obtém o nome (nesse caso, já está definido como "Ana").
+- Em seguida, ela chama a função callback(nome), que é a saudacao, e passa o nome para ela.
+
+
+Callback com tempo de espera
+
+Agora, imagine que você está simulando uma tarefa que leva tempo, como baixar um arquivo. Para isso, usamos setTimeout, que chama a função depois de um certo tempo.
+
+function finalizarDownload() {
+    console.log("Download completo!");
+}
+
+function baixarArquivo(callback) {
+    console.log("Iniciando download...");
+    setTimeout(callback, 3000); // Espera 3 segundos e depois chama o callback
+}
+
+ Passamos a função finalizarDownload como callback
+baixarArquivo(finalizarDownload);
+
+
+
+- baixarArquivo exibe “Iniciando download...” e, depois de 3 segundos, chama o callback (nesse caso, finalizarDownload).
+- Essa espera simula o tempo necessário para uma tarefa, e o callback só é chamado ao final.
+
+ Por que não fazer tudo em uma função só?
+
+Usar callbacks ajuda a deixar o código mais organizado e reutilizável, pois permite que diferentes funções sejam passadas para executar tarefas específicas ao final de uma ação. 
+Em tarefas assíncronas, como requisições de dados e animações, callbacks são essenciais para que o código não precise “parar” enquanto espera uma tarefa terminar.
+
+                                                                                                                                                  
+Callback é uma função que você passa para outra função para ser chamada depois de alguma ação específica.
+- Usar callbacks facilita o controle de ações que dependem de outras e ajuda a organizar o fluxo do código, especialmente em situações assíncronas.
+
+                                                             
+	9.	Eventos: Como você adicionaria um evento de clique em um botão usando JavaScript? Mostre um exemplo básico com addEventListener.
+
+Para fazer algo quando um botão é clicado, você pode adicionar um "escutador" de eventos:
+
+document.getElementById("botao").addEventListener("click", () => { 
+console.log("Botão clicado!"); });
+
+Isso conecta o clique no botão com uma função específica.
+
+
+	10.	Manipulação de Strings: Como você pode transformar uma string para letras maiúsculas em JavaScript? E para letras minúsculas?
+
+Se você quer converter uma string 
+para letras maiúsculas, use string.toUpperCase();. 
+Para minúsculas, use string.toLowerCase();. I
+sso é útil quando precisa normalizar textos.
+
+	11.	DOM: O que é o document.querySelector? Como ele difere do document.getElementById?
+
+ querySelector permite selecionar qualquer elemento com um seletor CSS (por exemplo, .classe, #id). 
+Já getElementById só pega elementos pelo ID. querySelector é mais versátil, mas getElementById é mais rápido.
+
+	12.	Métodos de Arrays: O que o método .filter() faz em um array? Como ele se compara ao .map()? Dê exemplos simples de cada um.
+
+filter() cria um novo array só com os itens que passam em uma condição. Exemplo: array.filter(item => item > 10);.
+map() cria um novo array transformando cada item. Exemplo: array.map(item => item * 2);.
+filter é para filtrar, e map para transformar.
+
+	13.	Escopo: Explique o conceito de escopo em JavaScript. Qual a diferença entre variáveis definidas no escopo global e no escopo local?
+
+O escopo define onde as variáveis "vivem" no código. 
+Variáveis no escopo global podem ser acessadas de qualquer lugar, 
+mas no escopo local (como dentro de uma função ou bloco) só podem ser usadas ali.
+
+	14.	Objetos: Como você cria um objeto simples em JavaScript? Como acessa e modifica as propriedades desse objeto?
+
+ Em JavaScript, você cria objetos assim:
+
+let pessoa = { nome: "Ana", idade: 25 };
+
+Para acessar ou alterar as propriedades, use pessoa.nome ou pessoa.idade = 26;
+
+	15.	Template Literals: O que são template literals (usando  ) e como eles facilitam a concatenação de strings em JavaScript?
+
+Template literals (usando ``) são strings que permitem colocar variáveis direto no texto:
+
+sole.log(`Olá, ${nome}`);
+
+Isso é mais prático que concatenar com +.
+
+	16.	Conversão de Tipos: Como você converteria uma string "123" para um número em JavaScript?
+
+Para transformar "123" em um número, use parseInt("123") ou Number("123");.
+
+	17.	JSON: O que é JSON e como você transforma um objeto JavaScript em uma string JSON?
+
+JSON (JavaScript Object Notation) é um formato para armazenar e trocar dados. Para converter um objeto em JSON, use JSON.stringify(objeto);.
+
+	18.	Arrays: Como você encontraria o tamanho de um array em JavaScript? E como pode verificar se um array está vazio?
+
+  O tamanho de um array é dado por array.length. Se quer saber se o array está vazio, verifique array.length === 0.
+
+	19.	Estruturas Condicionais: Explique como funciona o operador || em uma expressão como let nome = nome || "Convidado";.
+
+ || é um operador "ou" que fornece um valor padrão:
+
+let nome = nome || "Convidado";
+
+Se nome estiver vazio ou undefined, ele usará "Convidado".
+
+	20.	Data e Hora: Como você cria um objeto de data em JavaScript que representa o momento atual?
+
+  Para criar um objeto de data atual, use let dataAtual = new Date();
