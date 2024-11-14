@@ -1,0 +1,9 @@
+DIV 
+
+a div é um elemento de bloco block generico que serve para auxiliar no posicionamento dos elementos/conteudo na tela
+
+existem tambem elementos semanticos como main, section nav e outros 
+
+quando se cria uma div ela ja cria um elemento de bloco 
+
+o "width: auto" o auto é o tamanho total do elemento pai 
