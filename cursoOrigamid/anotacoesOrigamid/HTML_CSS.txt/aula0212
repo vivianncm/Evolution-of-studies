@@ -1,0 +1,19 @@
+RESET 
+Remova parte dos estilos iniciais 
+
+NORMALIZE 
+Normaliza os estilos iniciais entre os browser sem remover eles 
+
+REBOOT
+É uma mistura de reset e normalize utilizada pelo Bootstrap
+|
+|_ Algumas soluçoes foram criadas para lidar com os estilos iniciais. O principal objetivo delas é reduzir a inconsistencia entre os browser
+(nao sao mais tao usadas, mas sao importantes de saber)
+
+INHERIT (herança)
+-> existem propriedades do css q sao passadas de pai para filho uma herança
+exemplos: color, font-size, font-family e etc
+
+padrao vs herança
+o valor padrao irá escrever por cima da herança. por isso ao definirmos uma color no body, os <a> nao mudam de cor
+
