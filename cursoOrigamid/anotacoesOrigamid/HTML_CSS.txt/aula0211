@@ -1,0 +1,23 @@
+BOX MODEL
+
+-> Caixas
+Uma interface web é composta de diversas coixas que organizam o conteudo
+
+como essas caixam funcionam?
+
+-> Elas funcionam a partir do Box Model 
+o Box Model é um modelo que vai definir qual o tamanho dessa caixa, qual a distancia de uma pra outra, como funciona a largura a altura...
+
+Ela é composta de 
+
+-Content (conteudo)
+define a lagura inicial da caixa (salvo elementos de bloco)
+
+-Padding (preenchimento)
+separa o conteudo das bordas da caixa. É a margem interna
+
+-Border (borda)
+define bordas para a caixa
+
+-Margin (margem)
+define a distancia entre uma caixa e outra

@@ -1,0 +1,18 @@
+background
+/background-color 
+-> muda a cor de fundo do elemento
+
+as cores
+-> podem ser representadas por hexadecimal, rgba, plugin
+hexadecimal-> representada por um codigo de 6 caracteres hexadecimal que vai de 0 a f 
+rgba-> (0,0,0,1)
+o rgba é uma funçao q recebe os valores de 
+r (red), 
+g(green), 
+b(blue) 
+e a (alpha)
+
+O rgb vai de 0 a 255 
+e o alpha vai de 0 a 1
+
+
