@@ -1,9 +1,0 @@
-FOR EACH (item, index, array)
-
-O for each é especializado em iterar/passar por array
-
-item) - Dados/Informações contidos na posição atual do array
-index) - Número da Posição. Sempre começando em 0
-array) - Retorna o array completo
-
-array-> estrutura de dados onde eu posso guardar varias coisas
