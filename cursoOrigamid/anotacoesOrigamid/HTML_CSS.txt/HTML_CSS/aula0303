@@ -1,0 +1,14 @@
+ALIGN E JUSTIFY CONTENT 
+distribui extamente como vao ficar as colunas no grid 
+
+align-content -> faz o alinhamento na vertical 
+justify-content -> faz o alinhamento na horizontal 
+
+no projeto como em grid-template-columns esta sendo usado o fr (unidade de medida
+que distribui os espaçamentos igualmente entre todos os itens) o justify-content
+não interfere em nada no projeto pq não tem espaço
+no caso, ao definir valores em px no grid-template-columns o justify-content
+passa a funcionar
+
+para justificar o conteudo ou alinhar é preciso ter espaço sobrando
+pq se nao, nao vai funcionar pq nao tem onde alinhar n tem espaço 
