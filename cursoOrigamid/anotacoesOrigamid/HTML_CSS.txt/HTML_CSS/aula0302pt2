@@ -1,0 +1,16 @@
+Agora para iniciar o uso do display grid, é importante entender que
+o elemento que eu devo definir como display grid, é o elemento que 
+envolve a parte que eu quero transformar em colunas
+
+a parte que quero transformar em colunas nesse projeto sao os itens,
+porem nao tem nenhum elemento envolvendo ele aqui alem do body
+    mas o body tambem envolve o h1 e etc o que eu nao quero por isso
+vou criar uma div envolvendo o item para que eu possa usa-la 
+
+a porcentagem da muito problema no distanciamento, por isso pra dividir em 2 partes iguais 
+é bom usar o fr pq ele distribui o espaço que sobra em partes iguais entre os elementos
+
+display grid faz o espaçamento certinho, espaçamento unico pro item, nao invadem o bloco do outro
+nao colidem
+
+nao se comportam mais como inline ou block, passam a se comportar como grid 
