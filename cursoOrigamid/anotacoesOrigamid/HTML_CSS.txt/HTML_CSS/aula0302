@@ -1,0 +1,13 @@
+GRID COLUMNS 
+
+-grid 
+quando voce coloca display: grid num elemento pai voce muda totalmente o comportamento dos filhos e tambem do pai em relação aos filhos 
+com ele é possivel definir colunas e linhas para organizar os elementos que estiverem dentro do grid
+
+    algumas propriedades podem ser usada desde q o elemento seja o grid, como o:
+    
+    - grid-template-columns: define o total de colunas e o tamanho de cada uma
+    - fr: é uma unidade fracionária que tera como objetivo distribuir o espaço restante entre os elementos do grid.
+    - gap: cria uma distancia entre os elementos do grid, tanto horizontal quanto vertical
+
+        
