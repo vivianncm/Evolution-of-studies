@@ -1,0 +1,177 @@
+--> Como voce cria um link em HTLM?
+
+  Cria-se um link usando a tag <a>, especificando o atributo href para definir o destino do link
+		<a href="https://www.exemplo.com"> Clique para o site </a>
+
+--> Para que serve a tag <img> e quais atributos são necessários para exibir uma imagem corretamente?
+	
+  A tag <img> é usada para inserir uma imagem em uma pagina html. Os principais atributos necessários são:
+- src = Define o caminho para a imagem (local ou URL)
+- alt = Fornece uma descrição alternativa para a imagem 
+		<img src="imagem.jpg" alt="Descrição da imagem">
+
+--> O que são listas ordenadas e não ordenadas? Como elas são representadas em HTML?
+
+  Lista Ordenada = exibe itens em uma ordem específica (numerada)
+Usa a taga <ol>
+		<ol>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ol>
+
+  Lista Não Ordenada = exibe itens sem uma ordem específica (com marcadores) 
+Usa a tag <ul>
+		<ul>
+			<li>Item A</li>
+			<li>Item B</li>
+			<li>Item C</li>
+		</ul>
+
+--> Qual a importancia do atributo alt nas imagens?
+
+  O atributo alt serve para descrever o conteudo da imagem quando está não pode ser exibida. 
+É importante para:
+	Acessibilidade = pessoas que utilizam leitores de tela conseguem entender 
+o conteudo da imagem
+	SEO = mecanismos de busca utilizam o alt para entender o contexto da imagem
+	Performance = em caso de erro de carregamento da imagem, o texto alt é exbido no lugar
+
+--> Como funciona o seletor id e o seletor class em CSS? Dê exemplos
+
+	id = Identifica um único elemento na página
+Para usr no CSS, é necessario o simbolo #
+
+		<div id="cabecalho"> Cabeçalho</div>  ->html
+	
+css-->	#cabecalho {
+		background-color: blue;
+	}
+
+	class = Pode ser usado em múltiplos elementos. No CSS, usa-se o ponto.
+
+		<div class="box"> Caixa 1 </div>     ->html
+                <div class="box"> Caixa 2 </div>
+
+css-->	.box {
+		border: 1px solid black;
+	}
+
+--> O que o modelo de caixa (box model) no CSS?
+
+  O modelo de caixa é o conceito que descreve como os elementos são exibidos e organizados em CSS.
+Cada elemento é tratado como uma caixa com:
+	-Content: O conteudo propriamente dito (texto ou imagem)
+	-Padding: Espaço entre o conteudo e a borda
+	-Border: Borda ao redor do padding e conteudo
+	-margin: Espaço externo á borda, separando o elemento do outro
+
+--> Como funciona o flexbox e para que ele é utilizado:
+
+  Flexbox é um modelo de layout em css que facilita o alinhamento e distribuição de espaço entre itens 
+em um container, mesmo que seu tamanho seja desconhecido
+Utiliza-se para criar layouts flexiveis e responsivos. Para habilitar o flexbox, aplicamos display:flex;
+ao container e, depois, usamos propriedades como justify-content, align-items e flex-direction
+para organizar os itens
+	.container {
+		display:flex;
+		justify-content:space-between;
+	}
+
+--> Qual a diferença entre padding e margin?
+
+	Padding: é o espaço interno entre o conteudo de um elemento e sua borda
+	Margin: é o espaço externo que separa o elemento dos outros ao redor
+
+--> Qual a diferença entre let, const e var?
+
+	var: tem escopo de função e permite redefinições e reinicializações de valor
+	let: tem escopo de bloco e permite reinicializações, mas não redefinição na mesma função
+	cont: também tem escopo de bloco, mas não permite reinicializações ou redefinições de valor
+
+--> O que são arrays e objetos em JavaScript?
+
+	Arrays: são listas ordenadas de elementos que podem ser acessados pelo índice.
+		let frutas = ["maçã", "banana", "laranja"];
+	Objetos: são estruturas que armazanam pares chave-valor, onde cada valor é acessado 
+por uma chave específica.
+Entidade independente, com propriedades e tipos
+Em JS, praticamente qualquer tipo de dado é um objeto, e cada item dessa "coleção de valores" é 
+chamado de propriedade. Todos os objetos em JS são descendentes do Object e herdam métodos e
+propriedades de Object.prototype, embora eles possam ser substituídos.
+
+--> Qual a diferença entre == e === em JavaScript?
+
+== (igualdade frouxa): Compara os valores, mas ignora o tipo. Se os tipos forem diferentes,
+o JavaScript tenta converte-los para ver se os valores são iguais.
+	use se quiser apenas comporar os valores, independente do tipo
+
+=== (igualdade estrita): Compara tanto o valor quanto o tipo. Se os tipos forem diferentes, o resultado sempre sera FALSE, sem
+conversão de tipo.
+	use se quiser comparar os valores e os tipos ao mesmo tempo (opção mais segura)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
