@@ -1,0 +1,24 @@
+CSS POSICIONAMENTO
+TOP, RIGHT, BOTTOM, LEFT 
+propriedades como margin, padding e border permitem definirmos valores diferentes para cada um dos lados da caixa (box model)
+
+                   __________________________________________
+                  |                   top                    |              
+                  |                                          |                          
+                  |                                          |              
+                  | left                               rigth |          
+                  |                                          |              
+                  |                                          |          
+                  |                                          |              
+                  |                  bottom                  |
+                  ____________________________________________
+
+padding: 20px 40px
+margin: 30px 100px 60px 200px
+
+quando damos a ordem assim, com 2 ou 4 especificaçoes de tamanho, temos a seguinte ordem:
+
+padding: top/bottom rigth/left
+margin: top rigth bottom left
+
+                

@@ -1,0 +1,17 @@
+IMAGENS 
+a tag <img> é utilizada para adicionarmos imagens a nossa pagina
+
+src - atributo que define o caminho da imagem 
+alt - texto alternativo que será lido por leitores de tela, robos e que ira aparecer caso a imagem nao carregue 
+
+max-width: 100%
+geralmente definimos um width maximo de 100% para a imagem, assim ela não cresce alem do elemento pai
+
+resoluçao - para manter uma boa resolucao, utilize imagens com cerca de duas vezes o tamanho maximo que ela ira ocupar na tela em pixels
+
+svg e png - sao formatos geralmente utilizados para imagens que nao possuem fundo (o fundo se mescla com o do site)
+sempre que possivel utilize svg, eles podem escalar infinitamente sem perder resoluçao e geralmente sao menores em tamanho bytes.
+
+sites 
+squoosh pra reduzir tamanho das imagens https://squoosh.app/
+unsplash para pegar imagens gratuitas https://unsplash.com/

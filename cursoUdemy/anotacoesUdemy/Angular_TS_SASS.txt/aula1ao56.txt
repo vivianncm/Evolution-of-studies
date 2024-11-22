@@ -1,0 +1,370 @@
+Angular
+
+
+Para criar um projeto
+
+-> ng new name-project —no-standalone
+
+
+Para rodar o projeto
+
+-> ng serve
+
+Para criar um componente (criando um card)
+
+-> ng g c card
+
+Para criar um módulo
+
+-> ng g m cards
+
+
+
+
+Conceitos
+
+
+-> Componentes:
+
+Componente é um código um layout que eu vou ter e posso usar ele em vários locais diferentes, e dentro desse código eu vou ter uma lógica especifica 
+Quando eu crio um componente é porque eu quero alocar a lógica deixar aquela lógica guardada somente naquele lugar porque ela é especifica pra aquele lugar, 
+pode ser uma lógica de manipulação de dados e também pode ser uma lógica apenas para mostrar os dados que aquele componente recebe 
+(no angular podemos passar dados para um componente também.)
+Se eu crio um componente eu quero reutilizar ele em vários lugares diferentes, como por exemplo um “bloco”, um “card que utilizo em vários locais em uma página, 
+então eu crio ele e depois quando quero reutilizar eu referencio ele
+A ideia do componente é não precisar ficar repetindo códigos, copiando e colando o mesmo código para fazer uma mesma coisa. 
+Basta criar um componente e referenciar ele quando preciso.
+Mas eu também posso criar um componente que vai ser usado só uma vez, como um componente pai que referência os componentes filhos.
+Reutilização e agrupamento de lógica, desaclopado, mais organizado e rápido para identificar bugs.
+Um código mais separado, onde se um componente filho tem um problema eu identifico onde ele esta diretamente identificando seu componente pai para encontra-lo.
+
+
+-> Módulos:
+
+
+Telas diferentes 
+Componentes  diferentes 
+
+Dividir entre tela 1 e tela 2, criar um módulo para tela 1 e um módulo para a tela 2
+O módulo é para separar os componentes 
+
+-> app.module
+
+O AppModule é um módulo raiz em uma aplicação Angular. Ele é responsável por inicializar
+a aplicação, carregar outros módulos, declarar componentes, diretivas, pipes e serviços que 
+serão utilizados em toda a aplicação, além de configurar o roteamento e prover serviços globais.
+
+
+declarations: Aqui você declara os componentes, diretivas e pipes que
+pertencem a este módulo.
+
+imports: Aqui você importa outros módulos que sao necessários para 
+este módulo. Por exemplo o BrowserModule é necessário para executar a 
+aplicação no navegador, enquanto o AppRoutingModule pode ser usado 
+para configurar o roteamento da aplicação.
+
+providers: Aqui você pode configurar os provedores de serviços que serão
+disponibilizados em toda a aplicação. Por exemplo, serviços que precisam ser 
+compartilhados entre diferentes componentes.
+
+bootstrap: Aqui você especifica o componente raiz da sua aplicação, que
+será iniciado quando a aplicação for carregada.
+
+
+Evitar o erro de usar o app.module como único modulo, pois ele pode ficar 
+poluido. Existe 3 tipos de modulos: o da aplicacao, um modulo compartilhado e 
+outro mais exclusivo.
+
+
+Uma aplicação tem pelo menos um módulo que inicia toda a aplicação necessária 
+para rodar. Os componentes são um conjunto de elementos e funcionalidades que dão 
+vida aquela aplicação. Esse grupo com essa organização é chamada de Modules e por
+padrão ele é chamado de ngModule. Aplicações tendem a ter vários modules, porém so 
+com o padrão a aplicação ja funciona. Ele nos ajuda a organizar e modularizar a nossa aplicação, 
+sendo assim, podemos reutilizar o módulo completo em outras partes da aplicação em si e com os módulos podemos escolher o que vamos expor para fora dele.
+quando criamos um modulo devemos importar o commonmodule.
+
+
+
+-> Criar e desenvolver componentes
+
+Os componentes precisam ser declarados 
+em “declarations” (os pipes tambem vem em “declarations”)
+
+Nesse inicio eu faço com que o AppComponent e o CardComponent 
+estejam no mesmo modulo porque no meu AppComponent
+eu estou referenciando o meu CardComponent
+
+Todo módulo vai ficar nos imports
+
+
+Existem dois componentes, um em cada quadrado,
+Componente1 -> card
+Componente2 -> card-roxo
+esses componentes filhos fazem parte do componente pai
+que seria o AppComponent 
+
+Sabendo disso, caso eu queira mudar a posição desses componentes
+filhos, eu vou diretamente no componente pai  
+
+Passando os componentes filhos pra dentro da div da classe do componente pai
+E ai sim no SCSS referenciando a classe, fazendo a mudança de posição dos componentes
+
+Tendo em vista que:
+
+space-around -> pega todo o espaço que sobrar na linha e distribui igualmente 
+entre os elementos, deixando o spaço igual em toda a linha;
+space-between ocupa todo o espaço livre após a disposição dos itens e divide
+igualmente entre os itens, para que haja a mesma quantidade de espaço entre cada elemento;
+space-evenly -> o espaço é distribuido igualmente entre cada elemento adjacente,
+ou seja, um ao lado do outro, com exceção do primeiro e último.
+
+Agora o componente card tem componentes
+filhos, que são os componentes button
+
+Só consigo referenciar os componentes button
+porque eles estão no mesmo modulo que os 
+componentes card
+
+O projeto tem um problema de componentizacão, 
+porque cria dois componentes com o mesmo objetivo apenas com detalhes diferentes. 
+Isso a longo prazo pode gerar diversos bugs, o correto seria um componente com a funcionalidade base.
+
+Não é bom que todos os componentes fiquem em um  módulo apenas, porque dificulta o gerenciamento de componentes, 
+o ideal é criar os módulos com os componentes específicos/relacionados. 
+Sendo assim vamos mover os componentes Cards para um novo  módulo, o  módulo Cards Module.
+
+
+Apagar os importes Card do módulo App
+Apagar os componentes Card do módulo App
+Passando os componentes Card para o módulo Card module
+Como os cards não fazem mais parte do App module, o app.component.html na classe cards-conteiner, causa erro, pois desconhece a existência dos componentes de outro módulo (CardsModule) que estão sendo referenciados
+Para resolver isso precisamos fazer com que o módulo App referencie o módulo Cards, 
+para que o AppModule possa ter acesso e utilizar os componentes do CardsModule
+Também é necessário deixar explicito para o CardsModule os componentes que podem ser consumidos caso seja importado, da seguinte forma se especifica os componentes nos exports
+
+-> Interpolação {{ }}:
+
+Como fazer a conexão entre nosso componente, nossa classe typescript 
+e o template deste componente, que seria o arquivo html 
+
+Como chamar as propriedades da nossa classe dentro do html
+
+
+Para isso usamos a interpolação 
+Podemos  chamar essas propriedades e invocar métodos, 
+dessa classe aqui dentro do template desse componente E vai ficar tudo no escopo do componente Aqui no HTML nos vamos conseguir acessar as propriedades
+apenas do componente relacionado a ela
+
+Na classe do nosso componente, 
+dentro dela podemos colocar lógica
+podemos criar propriedades, métodos e etc
+Para fazer a referencia  dessas propriedades no html
+O que tiver entre as chaves {{ }}
+vai ser o acesso aos componentes 
+Agora colocar entre as chaves o que eu quero fazer o display 
+no navegador
+
+Podemos fazer também a invocação de métodos da nossa classe
+
+Para isso eu crio um método, nesse caso chamado getFullPrice()
+Vai ser um método que basicamente vai retornar uma string 
+
+Para invocar o método ’getFullPrice()’ 
+
+Esse processo de fazer as referencias das propriedades da classe 
+no HTML se chama BIND
+Quando se fala em fazer um BIND seria basicamente criar uma
+interpolação e referenciar uma propriedade no HTML Utilizar interpolação é uma das formar do BIND no Angular
+Sempre quando fazemos a interpolação, o BIND de uma 
+propriedade no HTML o Angular vai ficar escutando essa 
+propriedade, então sempre que ela sofrer alguma alteração 
+no seu valor na classe, o Angular vai atualizar o HTML com o ultimo 
+valor dessa propriedade  
+
+
+Encadeamento Opcional ’?’ 
+é undefined ou não
+
+
+Seletor:
+
+::ng-deep 
+
+Acessa classes CSS dos componentes filhos que utilizamos nos componentes pais
+A partir do componente pai eu posso alterar o estilo de algum componente filho, o ng-deep altera qualquer componente que esteja no componente pai
+
+:ng-host
+Isola em um só componente as alterações
+
+No styles global o ng-deep não funciona, 
+porque ele é feito para perfurar o view encapsulation
+não tem nada pro ng-deep perfurar aqui, porque 
+ja estamos na camada mais alta da aplicação 
+
+ 
+No Angular, atributos e propriedades são usados para configurar e modificar o comportamento e a aparência dos elementos,
+mas eles são tratados de maneira diferente no framework. 
+
+-> Atributos 
+
+ Os atributos são valores HTML fixos definidos diretamente no elemento DOM e são parte do HTML estático.
+Eles são usados para definir o estado inicial dos elementos, como id, class, href, etc.
+No Angular, ao usar @Input () para criar uma comunicação entre componentes, é possível passar valores diretamente nos atributos do componente filho no template do componente pai.
+
+-> DOM (Document Object Model)
+
+O DOM é uma interface que representa a estrutura de um documento HTML ou XML como uma árvore de nós. Cada elemento HTML é representado como um “nó” (ou “node”) na árvore, permitindo que linguagens de programação, como
+JavaScript, possam acessar e manipular o conteúdo e a estrutura desses documentos de forma programática.
+
+Estrutura do DOM
+Quando o navegador carrega uma página HTML, ele interpreta o código e cria uma estrutura hierárquica onde 
+Cada elemento HTML (como <div>, <p>, <h1>, etc.) é representado como um nó.
+Cada atributo de um elemento (como id, class, etc.) também é um nó filho desse elemento.
+Texto dentro de um elemento (como o conteúdo dentro de um <p>) também é representado como um nó.
+
+Representaçao do dom:
+
+Document
+|__ html
+     |__ body
+          |__ h1
+          |   |__ "ola mundo"
+          |
+          |__ p
+              |__ "este é uma paragrafo"
+     
+Cada um desses nós possui uma relação hierárquica:
+O nó html é o “pai” do nó body.
+O body é o pai dos elementos h1 e p.
+O texto dentro de h1 e p são filhos desses elementos
+
+O DOM  é iterativo e programável, e podemos manipulá-lo usando JavaScript.
+Alguns métodos e propriedades mais comuns:
+-document.getElementById(id): seleciona um elemento pelo seu id
+-document.querySelector(cssSelector): seleciona o primeiro elemento que corresponde ao seletor CSS fornecido
+-element.innerHTML: permite acessar ou definir o conteudo html de um elemento
+-element.classList: permite adicionar, remover ou alterar classe de um elemento
+
+Manipulação Dinâmica do DOM
+
+ A manipulação  do DOM permite adicionar, remover ou modificar elementos em tempo real. Por exemplo, com JavaScript, é possível mudar o conteúdo de um elemento <p>
+com id=”texto” para “Texto atualizado!” 
+
+	document.getElementById("texto").innerText = "Texto atualizado!";
+
+Isso atualiza o conteudo da pagina sem precisar recarregar a pagina inteira. Essa dinamica é a base do comportamento
+de aplicações modernas, especialmente em frameworks como Angular, onde o estado da aplicação pode ser usado para
+alterar o DOM em resposta a interações do usuário ou eventos.
+
+O DOM no Angular
+
+No Angular, você interage com o DOM usando o data binding e a manipulação de propriedades do Angular, 
+o que abstrai a complexidade da manipulação direta do DOM.
+
+->Data binding permite sincronizar dados entre o modelo (dados da aplicação) e a visão (DOM).
+
+->O Angular usa o Property binding para manipular propriedades do DOM de forma reativa, conforme o estado do componente muda.
+
+->Event binding permite associar eventos do DOM (como click, keyup, etc.) com métodos do componente.
+
+Esse modelo permite que o Angular mantenha o DOM atualizado automaticamente, facilitando a criação reativas 
+e interativas.
+
+
+-> Propriedades
+
+  As propriedades são valores que fazem parte do objeto DOM e podem ser manipulados pelo JavaScript.
+No Angular, o data binding  (ou property binding) permite que você altere propriedades dinamicamente usando colchetes [ ].
+Isso é especialmente útil para atualizar o DOM conforme o estado do componente muda.
+
+Atributos
+São as palavras que colocamos direto no elemento html
+e elas vao ser utilizadas nos processos de renderização
+desse elemento pra dar a característica dele
+
+Propriedades
+As propriedades são um pouco diferentes. Elas vão ser basicamente
+um objeto JavaScript que nos vamos utilizar, que nos vamos poder
+acessar, utilizando o JavaScript e elas também vão ter todas as características 
+desse elemento div.
+
+Data binding
+
+A função do Data Binding é fazer a comunicação entre o component view e o
+lógico.
+
+Alguns tipos de Data Binding:
+-> Interpolation
+É a forma mais fácil de exibir um dado, o dado é representado no template por
+dois pares de chaves {{ }}
+
+-> Property binding
+É a forma de passar dados do componente para o template. Pode ser usado para
+definir atributos HTML como disabled, src, href, class, style, entre outros.
+Representado entre colchetes [ ]
+
+-> Event binding
+Fica escutando para responder as ações como apertar teclas, movimento do 
+mouse, clicks e toches;
+
+-> $event
+No Angular, $event é uma maneira de pegar informações sobre algo que aconteceu, como um clique em um botão.
+Quando você usa $event, está recebendo detalhes sobre esse evento. Por exemplo, ao clicar em um botão:
+
+-> Custom Binding
+No Angular, você pode criar custom bindings (ligacões personalizadas) usando
+componentes filhos e pais para compartilhar dados entre si. Normalmente, isso é 
+feito com @Input() para property binding (dados fluindo de pai para filho) e 
+@Output() com EventEmitter para event binding (dados fluindo de filho para pai).
+
+No  Componente Filho (InputComponent):
+@Input() texto: Recebe um texto do componente pai
+@Output() textoChange: Emite o texto atualizado sempre que o usuário digita algo no campo de entrada.
+onInputChange: Atualiza o valor e emite o novo texto para o pai
+
+No Componente Pai (AppComponent):
+O componente pai tem uma propriedade texto que é vinculada ao componente filho usando [(texto)]=”texto”
+Isso permite que o valor seja atualizado em ambos os lados.
+
+Rota: combinação caminho em seu URL e as informações que devem ser carregadas quando 
+esse path se tornar ativo
+
+@Input
+Fazer que o componente filho receba algo do componente pai
+
+Enviar um dado a partir do componente filho para o componente pai 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
