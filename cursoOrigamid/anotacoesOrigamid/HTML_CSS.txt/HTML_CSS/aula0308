@@ -1,0 +1,22 @@
+POSITION 
+é usada pra definir como os elementos vão ser posicionados na página. 
+Por padrão, tudo começa como static, que é o fluxo normal do layout. 
+
+Mas dá pra usar outros valores pra ter mais controle
+
+relative
+o elemento fica onde estaria normalmente, mas você pode empurrar
+ele pra outra posição usando top, right, bottom ou left. Mesmo assim o espaço dele no layout continua reservado
+
+absolute
+sai do fluxo normal e se posiciona com base no elemento pai 
+mais próximo que tenha um position definido (relative, absolute ou fixed) se não tiver, ele se baseia no body
+
+fixed
+gruda o elemento na tela, independente do scroll. Ele sempre fica no mesmo lugar
+
+top, right, bottom, left
+servem pra ajustar a posição de elementos que estão fora do fluxo padrão
+
+z-index
+define o que aparece por cima quando os elementos se sobrepoem
