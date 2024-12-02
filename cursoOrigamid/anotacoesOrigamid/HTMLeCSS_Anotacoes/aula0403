@@ -1,0 +1,21 @@
+LISTAS
+
+- ul
+A tag <ul> marca uma lista de itens sem ordem (unordered list). Cada item da lista deve ser marcado com uma <li></li>
+Acessibilidade
+Listas são anunciadas pelo leitor de tela e o usuário é informado previamente quantos itens existem na lista.
+
+- ol
+A tag <ol> marca uma lista ordenada (ordered list).
+
+-dt
+Marca o termo/frase a ser definido.
+
+-dd
+Marca a definição do termo acima.
+
+- CSS
+As listas não são utilizadas apenas para textos simples, é possível agruparmos uma lista de produtos em uma ul > li. Para isso geralmente removemos os estilos padrões definidos por listas.
+
+- list-style
+Possui diferentes valores que definem o estilo dos marcado
