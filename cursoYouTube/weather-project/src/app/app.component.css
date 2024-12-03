@@ -1,8 +1,0 @@
-.app-container {
-  display: grid;
-  background-color: brown;
-  grid-row: 3;
-  gap: 20px;
-  align-items: stretch;
-}
-
