@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+}
+
+.firstcont{
+  background-color:brown;
+  margin-top: 200px;
+  margin-left: 100px;
+  width: max-content;
+}

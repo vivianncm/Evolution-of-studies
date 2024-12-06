@@ -1,0 +1,7 @@
+.container-sidebar {
+  position: fixed;
+  padding-top: 72px;
+  width: 110px;
+  min-height: 700px;
+  background-color: #527588;
+}
